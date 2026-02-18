@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Configuration &amp; Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#277bf1",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #233248;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-72 flex-shrink-0 bg-white dark:bg-[#111822] border-r border-slate-200 dark:border-[#233248] flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">settings_input_component</span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-tight">Antigravity</h1>
+<p class="text-xs text-slate-500 dark:text-[#91a9ca]">System Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1 overflow-y-auto custom-scrollbar">
+<div class="pb-4 mb-4 border-b border-slate-100 dark:border-[#233248]">
+<p class="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-[#91a9ca]/50 mb-2">Main</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-[#91a9ca] hover:bg-slate-100 dark:hover:bg-[#233248] transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+</div>
+<div class="pb-4 mb-4 border-b border-slate-100 dark:border-[#233248]">
+<p class="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-[#91a9ca]/50 mb-2">Management</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Team Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-[#91a9ca] hover:bg-slate-100 dark:hover:bg-[#233248] transition-colors" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-sm font-medium">AI Configuration</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-[#91a9ca] hover:bg-slate-100 dark:hover:bg-[#233248] transition-colors" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="text-sm font-medium">Knowledge Base</span>
+</a>
+</div>
+<div>
+<p class="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-[#91a9ca]/50 mb-2">System</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-[#91a9ca] hover:bg-slate-100 dark:hover:bg-[#233248] transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">General Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-[#91a9ca] hover:bg-slate-100 dark:hover:bg-[#233248] transition-colors" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-sm font-medium">Security</span>
+</a>
+</div>
+</nav>
+<div class="p-4 mt-auto border-t border-slate-100 dark:border-[#233248]">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="size-full object-cover" data-alt="User avatar with stylized features" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl3dE8VAbvUFnPsAAzEFHm-GgD9pB1zZTq0EnIP3Lmn0X6061I88WirIpDxNNpC4o7IGNaCQO3Qhs508Roi42nk4D1lv1xeBz03EY0M1hm8IZ8UmVJ-LDWTaOgKTf5V6ewEwHF4RxgCddyACeuCgHqQTH9GLvcjyCfrbcx4w9_T8hXIft6PCrExDLzux-mQPZ1mQ3xtJSpMdKIHtqLhhhbdiV3vsee7UpGgR0l_iAMSVVKuTLMGGZG3jxEiMGB6hiRdg_VEwniM1A"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-semibold truncate">Alex Rivera</p>
+<p class="text-[10px] text-slate-500 dark:text-[#91a9ca] truncate">System Admin</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto custom-scrollbar bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-white/80 dark:bg-[#101722]/80 backdrop-blur-md border-b border-slate-200 dark:border-[#233248] px-8 py-4 flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-xs text-slate-500 dark:text-[#91a9ca] mb-1">
+<span>Admin</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-medium">System Configuration</span>
+</div>
+<h2 class="text-xl font-bold">Configuration Console</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-[#111822] border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/50 transition-all outline-none" placeholder="Search settings..." type="text"/>
+</div>
+<button class="relative p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-[#233248] transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-[#91a9ca]">notifications</span>
+<span class="absolute top-2 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#101722]"></span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Section 1: Team Management -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-lg font-bold">Team Management</h3>
+<p class="text-sm text-slate-500 dark:text-[#91a9ca]">Manage organization members and their access levels.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                            Invite Member
+                        </button>
+</div>
+<div class="bg-white dark:bg-[#111822] rounded-xl border border-slate-200 dark:border-[#324867] overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-[#192434] border-b border-slate-200 dark:border-[#324867]">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#91a9ca]">User</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#91a9ca]">Role</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#91a9ca]">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#91a9ca] text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-[#324867]">
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-sm">AR</div>
+<div>
+<p class="text-sm font-semibold">Alex Rivera</p>
+<p class="text-xs text-slate-500 dark:text-[#91a9ca]">alex@antigravity.ai</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">ADMIN</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-medium text-emerald-500">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-indigo-500/20 flex items-center justify-center font-bold text-indigo-500 text-sm">SC</div>
+<div>
+<p class="text-sm font-semibold">Sam Chen</p>
+<p class="text-xs text-slate-500 dark:text-[#91a9ca]">sam@antigravity.ai</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-100 dark:bg-[#233248] text-slate-600 dark:text-slate-300">EDITOR</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-medium text-emerald-500">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-amber-500/20 flex items-center justify-center font-bold text-amber-500 text-sm">JS</div>
+<div>
+<p class="text-sm font-semibold">Jordan Smith</p>
+<p class="text-xs text-slate-500 dark:text-[#91a9ca]">jordan@antigravity.ai</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-100 dark:bg-[#233248] text-slate-600 dark:text-slate-300">VIEWER</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-1.5 rounded-full bg-slate-400"></span>
+<span class="text-xs font-medium text-slate-400">Pending</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:underline text-xs font-bold">Resend</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Section 2: AI Configuration -->
+<section>
+<div class="mb-6">
+<h3 class="text-lg font-bold">AI Configuration</h3>
+<p class="text-sm text-slate-500 dark:text-[#91a9ca]">Connect your Antigravity AI credentials.</p>
+</div>
+<div class="bg-white dark:bg-[#111822] rounded-xl border border-slate-200 dark:border-[#324867] p-6 space-y-6">
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-[#91a9ca] uppercase tracking-wider mb-2">API Key</label>
+<div class="relative">
+<input class="w-full bg-slate-100 dark:bg-[#233248] border-none rounded-lg py-3 px-4 text-sm font-mono focus:ring-2 focus:ring-primary/50 transition-all outline-none" type="password" value="sk-antigravity-77x992837465611"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-lg">visibility_off</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-[#91a9ca] uppercase tracking-wider mb-2">Primary Model</label>
+<select class="w-full bg-slate-100 dark:bg-[#233248] border-none rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all outline-none">
+<option>Antigravity-4.5 Ultra</option>
+<option>Antigravity-4 Pro</option>
+<option>Antigravity-Lite</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-[#91a9ca] uppercase tracking-wider mb-2">Region</label>
+<select class="w-full bg-slate-100 dark:bg-[#233248] border-none rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all outline-none">
+<option>US East (Virginia)</option>
+<option>EU West (Dublin)</option>
+<option>Asia Pacific (Tokyo)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-[#91a9ca] uppercase tracking-wider mb-2">System Prompt Template</label>
+<textarea class="w-full bg-slate-100 dark:bg-[#233248] border-none rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all outline-none resize-none" rows="4">You are an advanced AI assistant powered by the Antigravity engine. Your goal is to help technical users manage their systems with precision and accuracy.</textarea>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-slate-100 dark:border-[#233248]">
+<div class="flex items-center gap-2 text-emerald-500">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Connected</span>
+</div>
+<button class="px-4 py-2 border border-slate-200 dark:border-[#233248] rounded-lg text-sm font-semibold hover:bg-slate-50 dark:hover:bg-[#233248] transition-all">
+                                    Test Connection
+                                </button>
+</div>
+</div>
+</section>
+<!-- Section 3: Knowledge Base Management -->
+<section>
+<div class="mb-6">
+<h3 class="text-lg font-bold">Knowledge Base</h3>
+<p class="text-sm text-slate-500 dark:text-[#91a9ca]">Upload PDFs and documentation for AI training.</p>
+</div>
+<div class="bg-white dark:bg-[#111822] rounded-xl border border-slate-200 dark:border-[#324867] flex flex-col h-full">
+<div class="p-6 border-b border-slate-100 dark:border-[#324867]">
+<div class="border-2 border-dashed border-slate-200 dark:border-[#233248] rounded-xl p-8 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary/50 transition-all bg-slate-50/50 dark:bg-white/5">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<p class="text-sm font-bold mb-1">Click to upload or drag and drop</p>
+<p class="text-xs text-slate-500 dark:text-[#91a9ca]">PDF, Markdown, or Text files up to 50MB</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto max-h-[300px] custom-scrollbar">
+<ul class="divide-y divide-slate-100 dark:divide-[#324867]">
+<li class="px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-9 bg-red-500/10 text-red-500 rounded flex items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-sm font-medium">Q3_System_Specs.pdf</p>
+<p class="text-[10px] text-slate-500 dark:text-[#91a9ca]">2.4 MB • Uploaded 2h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold text-emerald-500 uppercase tracking-tighter">Indexed</span>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</li>
+<li class="px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-9 bg-red-500/10 text-red-500 rounded flex items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-sm font-medium">Internal_Protocols_v2.pdf</p>
+<p class="text-[10px] text-slate-500 dark:text-[#91a9ca]">1.1 MB • Uploaded yesterday</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter animate-pulse">Processing...</span>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Actions -->
+<div class="pt-8 mt-8 border-t border-slate-200 dark:border-[#233248] flex items-center justify-end gap-3 pb-12">
+<button class="px-6 py-2.5 rounded-lg text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">
+                        Discard Changes
+                    </button>
+<button class="px-8 py-2.5 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/30">
+                        Save Configuration
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

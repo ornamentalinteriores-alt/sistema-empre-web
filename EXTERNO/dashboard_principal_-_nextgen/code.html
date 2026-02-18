@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ArchStudio | Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#277bf1",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .sidebar-active { background-color: #277bf1; color: white; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Persistent Sidebar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111822] flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5 text-white">
+<span class="material-symbols-outlined block">architecture</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">ArchStudio</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Design &amp; Compliance</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg sidebar-active text-sm font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+                    Projects
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium" href="#">
+<span class="material-symbols-outlined">notifications_active</span>
+                    Municipal Alerts
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Clients
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium" href="#">
+<span class="material-symbols-outlined">description</span>
+                    Documentation
+                </a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white rounded-lg py-2.5 text-sm font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                    New Project
+                </button>
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+<img alt="Architect Profile Image" data-alt="Professional architect profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxCWS-1B6HgnmkzDhNOCQvxu8cT2oVhuqnV_J-6MkOPawdPvRsQ5PM_Wz6rY8_G0-bCjsc2ffCF54kL7KSAdWsstbaSXtM_F7Qt6hrfvEkbDijTqDsnyfQHog8YdPEQyRlo52nPZNrUSzb1RL9yY_Y7JCnXi6qzyFr-BJ8DLkSpotjfBKXCaCV2R_7k7ToBsEQbS6NU2ewbGk5AIiPsAtq-YxYPcflnhhzqRB6AtpmLGERnhNS8gaT-Fr2Vkb3Yzh9KeF4uxdOQBI"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-semibold truncate">D. Rodriguez</p>
+<p class="text-[10px] text-slate-500">Lead Architect</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Global Header -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-slate-200 dark:border-slate-800 glass z-10">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800/50 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary" placeholder="Search project files, licenses or alerts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-800 mx-2"></div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-500">UTC -5:00</span>
+<div class="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-wider">System Live</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- KPI Stats Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined">list_alt</span>
+</div>
+<span class="text-xs font-medium text-green-500 flex items-center">+5.2% <span class="material-symbols-outlined text-xs">trending_up</span></span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Projects</p>
+<h3 class="text-3xl font-bold mt-1">128</h3>
+<div class="mt-4 h-1.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 rounded-full"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/50 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-500/10 text-amber-500 rounded-lg">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+<span class="text-xs font-medium text-amber-500 flex items-center">+2 <span class="material-symbols-outlined text-xs">arrow_upward</span></span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Pending Approvals</p>
+<h3 class="text-3xl font-bold mt-1">14</h3>
+<div class="mt-4 h-1.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-1/4 rounded-full"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-green-500/50 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-green-500/10 text-green-500 rounded-lg">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<span class="text-xs font-medium text-green-500 flex items-center">92% <span class="material-symbols-outlined text-xs">check_circle</span></span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Approved Licenses</p>
+<h3 class="text-3xl font-bold mt-1">84</h3>
+<div class="mt-4 h-1.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Active Projects Table -->
+<div class="lg:col-span-2 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Active Projects</h2>
+<button class="text-xs font-bold text-primary hover:underline">View All Projects</button>
+</div>
+<div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 uppercase text-[10px] font-bold tracking-widest">
+<tr>
+<th class="px-6 py-4">File ID</th>
+<th class="px-6 py-4">Project Name</th>
+<th class="px-6 py-4">Location</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-mono text-xs">#HYO-2024-042</td>
+<td class="px-6 py-4">
+<div class="font-medium">Residencial Los Olivos</div>
+<div class="text-[10px] text-slate-500">Multi-family Housing</div>
+</td>
+<td class="px-6 py-4 text-slate-500">Huancayo</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">In Review</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-mono text-xs">#ETM-2024-015</td>
+<td class="px-6 py-4">
+<div class="font-medium">Centro Comercial El Tambo</div>
+<div class="text-[10px] text-slate-500">Retail / Mall</div>
+</td>
+<td class="px-6 py-4 text-slate-500">El Tambo</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold uppercase">Approved</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-mono text-xs">#CHL-2024-009</td>
+<td class="px-6 py-4">
+<div class="font-medium">Edificio Santa Rosa</div>
+<div class="text-[10px] text-slate-500">Office Complex</div>
+</td>
+<td class="px-6 py-4 text-slate-500">Chilca</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase">Corrections</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-mono text-xs">#HYO-2024-055</td>
+<td class="px-6 py-4">
+<div class="font-medium">Urbanización San Carlos</div>
+<div class="text-[10px] text-slate-500">Master Plan</div>
+</td>
+<td class="px-6 py-4 text-slate-500">Huancayo</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-slate-500/10 text-slate-500 text-[10px] font-bold uppercase">Draft</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 bg-slate-50/50 dark:bg-slate-900/30 flex justify-between items-center text-xs text-slate-500 font-medium">
+<span>Showing 4 of 128 results</span>
+<div class="flex gap-2">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Municipal Alerts Feed -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Municipal Alerts</h2>
+<button class="text-slate-400"><span class="material-symbols-outlined">filter_list</span></button>
+</div>
+<div class="space-y-4">
+<!-- Alert Item -->
+<div class="bg-white dark:bg-slate-800/40 border-l-4 border-primary p-4 rounded-r-xl border-y border-r border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-300">Huancayo</span>
+<span class="text-[10px] text-slate-400">14m ago</span>
+</div>
+<h4 class="text-sm font-semibold mb-1">New Land Use Regulation (H-12)</h4>
+<p class="text-xs text-slate-500 leading-relaxed">Changes in setbacks for residential zones R-3. All new filings must comply.</p>
+<div class="mt-3 flex gap-2">
+<button class="text-[10px] font-bold text-primary border border-primary/20 hover:bg-primary/5 px-2 py-1 rounded uppercase">Download PDF</button>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="bg-white dark:bg-slate-800/40 border-l-4 border-amber-500 p-4 rounded-r-xl border-y border-r border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-300">El Tambo</span>
+<span class="text-[10px] text-slate-400">2h ago</span>
+</div>
+<h4 class="text-sm font-semibold mb-1">System Maintenance Notice</h4>
+<p class="text-xs text-slate-500 leading-relaxed">Online permit submission system will be offline between 22:00 and 02:00 tonight.</p>
+</div>
+<!-- Alert Item -->
+<div class="bg-white dark:bg-slate-800/40 border-l-4 border-slate-400 p-4 rounded-r-xl border-y border-r border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-300">Chilca</span>
+<span class="text-[10px] text-slate-400">Yesterday</span>
+</div>
+<h4 class="text-sm font-semibold mb-1">2024 Tax Update</h4>
+<p class="text-xs text-slate-500 leading-relaxed">Minor adjustments to administrative fees for structural renovations.</p>
+</div>
+<button class="w-full py-3 text-xs font-bold text-slate-500 border border-dashed border-slate-300 dark:border-slate-700 rounded-xl hover:border-primary hover:text-primary transition-all">
+                                Load Previous Alerts
+                            </button>
+</div>
+</div>
+</div>
+<!-- Map / Quick Tools (Optional extra for "Tech" aesthetic) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
+<div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-primary/10 text-primary rounded-full">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div>
+<h4 class="font-bold">Project Heatmap</h4>
+<p class="text-xs text-slate-500">Visual geographic distribution of licenses</p>
+</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">Open Map Viewer</button>
+</div>
+<div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-primary/10 text-primary rounded-full">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<div>
+<h4 class="font-bold">Compliance Checker</h4>
+<p class="text-xs text-slate-500">AI-powered scan for municipal regulations</p>
+</div>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold shadow-lg shadow-primary/20">Upload Files</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

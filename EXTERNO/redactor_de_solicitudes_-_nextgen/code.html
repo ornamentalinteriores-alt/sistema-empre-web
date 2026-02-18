@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocGen Pro | Document Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#277bf1",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233248;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #277bf1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 bg-[#111822] border-r border-slate-800 flex flex-col justify-between py-6">
+<div class="flex flex-col gap-8 px-4">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary rounded-lg p-2 text-white">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h1 class="text-white text-lg font-bold leading-tight">DocGen Pro</h1>
+<p class="text-slate-400 text-xs">Professional Suite</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">All Templates</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="text-sm font-medium">Drafts</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined">history</span>
+<span class="text-sm font-medium">Recent Docs</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined">folder</span>
+<span class="text-sm font-medium">Project Folders</span>
+</div>
+</nav>
+<div class="pt-4 border-t border-slate-800">
+<p class="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Categories</p>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm text-slate-400 hover:text-white" href="#">Official Letters</a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm text-slate-400 hover:text-white" href="#">Internal Memos</a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm text-slate-400 hover:text-white" href="#">Business Proposals</a>
+</div>
+</div>
+</div>
+<div class="px-4 flex flex-col gap-4">
+<div class="bg-slate-800/50 rounded-lg p-3">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[10px] text-slate-400">STORAGE</span>
+<span class="text-[10px] text-slate-400">85%</span>
+</div>
+<div class="w-full bg-slate-700 rounded-full h-1">
+<div class="bg-primary h-1 rounded-full w-[85%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</div>
+<div class="flex items-center gap-3 px-2">
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs border border-primary/30">JD</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-white">John Doe</span>
+<span class="text-[10px] text-slate-500">Premium Plan</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col bg-background-dark">
+<!-- Header Toolbar -->
+<header class="h-16 border-b border-slate-800 flex items-center justify-between px-6 bg-[#111822]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400">arrow_back</span>
+<div>
+<h2 class="text-white text-sm font-semibold">New Project Proposal</h2>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] text-slate-400 uppercase tracking-widest">Editing Draft - Saved 2m ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-slate-800 rounded-lg p-1 mr-4">
+<button class="px-3 py-1.5 text-xs text-white bg-slate-700 rounded-md shadow-sm">Editor</button>
+<button class="px-3 py-1.5 text-xs text-slate-400 hover:text-white">Outline</button>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-sm">save</span>
+                        Save Draft
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm text-white">picture_as_pdf</span>
+                        Export PDF
+                    </button>
+</div>
+</header>
+<div class="flex-1 flex overflow-hidden">
+<!-- Form Area -->
+<section class="w-1/2 overflow-y-auto p-8 border-r border-slate-800">
+<div class="max-w-xl mx-auto space-y-8 pb-12">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">Project Details</h3>
+<p class="text-slate-400 text-sm">Fill in the core information for your proposal.</p>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sender Name</label>
+<input class="w-full bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary placeholder:text-slate-600" type="text" value="Acme Corporation"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Date</label>
+<input class="w-full bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary" type="date" value="2023-10-24"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Recipient Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-500 text-lg">person</span>
+<input class="w-full pl-10 bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary" placeholder="e.g. Sarah Jenkins" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Project Subject</label>
+<input class="w-full bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary" type="text" value="Strategic Infrastructure Redesign Q4"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Executive Summary</label>
+<span class="text-[10px] text-primary font-bold">DYNAMIC VAR ENABLED</span>
+</div>
+<textarea class="w-full bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary resize-none" rows="6">This proposal outlines the comprehensive plan to modernize our existing cloud infrastructure. By implementing the new protocols described in this document, Acme Corp aims to reduce latency by 40% while lowering operational costs by $12,000 monthly.</textarea>
+</div>
+<div class="p-4 bg-primary/5 border border-primary/20 rounded-xl flex gap-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<h4 class="text-sm font-semibold text-white">Pro Tip</h4>
+<p class="text-xs text-slate-400 mt-1 leading-relaxed">Use brackets like <span class="text-primary font-mono">[ClientName]</span> to automatically pull data from your CRM integration if connected.</p>
+</div>
+</div>
+<div class="space-y-4 pt-4">
+<h3 class="text-white text-lg font-bold border-b border-slate-800 pb-2">Financial Breakdown</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Project Budget</label>
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-slate-500 text-sm">$</span>
+<input class="w-full pl-7 bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary" type="number" value="45000"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Currency</label>
+<select class="w-full bg-slate-800/50 border-slate-700 rounded-lg text-white text-sm focus:ring-primary focus:border-primary">
+<option>USD - US Dollar</option>
+<option>EUR - Euro</option>
+<option>GBP - British Pound</option>
+</select>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Authorized Signature</label>
+<div class="border-2 border-dashed border-slate-700 rounded-lg p-8 flex flex-col items-center justify-center text-slate-500 hover:text-slate-400 hover:border-slate-600 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-2">draw</span>
+<span class="text-xs font-medium">Click to upload or draw signature</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Preview Pane -->
+<section class="w-1/2 bg-[#0a0f18] p-10 flex justify-center overflow-y-auto">
+<!-- Virtual A4 Page -->
+<div class="w-[595px] h-[842px] bg-white text-black shadow-2xl p-16 flex flex-col relative flex-shrink-0">
+<!-- Branding -->
+<div class="flex justify-between items-start mb-12">
+<div class="w-16 h-16 bg-slate-200 rounded flex items-center justify-center border border-slate-300">
+<span class="material-symbols-outlined text-slate-400 text-3xl">corporate_fare</span>
+</div>
+<div class="text-right">
+<h4 class="font-bold text-lg uppercase tracking-tight">ACME CORPORATION</h4>
+<p class="text-[10px] text-slate-500">123 Business Way, Silicon Valley, CA 94025</p>
+<p class="text-[10px] text-slate-500">contact@acmecorp.com | +1 (555) 000-0000</p>
+</div>
+</div>
+<!-- Doc Content -->
+<div class="space-y-6">
+<div class="flex justify-between border-b border-black pb-2">
+<h1 class="font-black text-2xl uppercase italic">Project Proposal</h1>
+<p class="text-sm font-medium self-end">October 24, 2023</p>
+</div>
+<div class="flex gap-1">
+<div class="w-1/3 text-[10px] font-bold text-slate-400 uppercase">Attention</div>
+<div class="w-2/3 text-sm font-semibold">Sarah Jenkins</div>
+</div>
+<div class="flex gap-1">
+<div class="w-1/3 text-[10px] font-bold text-slate-400 uppercase">Subject</div>
+<div class="w-2/3 text-sm font-bold uppercase underline">Strategic Infrastructure Redesign Q4</div>
+</div>
+<div class="pt-4 space-y-4">
+<p class="text-[12px] leading-relaxed">
+                                    Dear Sarah Jenkins,
+                                </p>
+<p class="text-[12px] leading-relaxed">
+                                    This proposal outlines the comprehensive plan to modernize our existing cloud infrastructure. By implementing the new protocols described in this document, Acme Corp aims to reduce latency by 40% while lowering operational costs by $12,000 monthly.
+                                </p>
+<p class="text-[12px] leading-relaxed">
+                                    Our team has meticulously evaluated the current bottleneck points and determined that the proposed transition to a hybrid-cloud architecture will offer the best ROI for the upcoming fiscal year.
+                                </p>
+</div>
+<!-- Financial Summary Table -->
+<div class="mt-8">
+<table class="w-full text-[11px]">
+<thead>
+<tr class="bg-slate-100 border-t border-b border-black">
+<th class="py-2 text-left px-2">Description</th>
+<th class="py-2 text-right px-2">Total Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-slate-100">
+<td class="py-2 px-2">Cloud Infrastructure Setup Fee</td>
+<td class="py-2 text-right px-2 font-mono">$15,000.00</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="py-2 px-2">Implementation &amp; Migration Services</td>
+<td class="py-2 text-right px-2 font-mono">$30,000.00</td>
+</tr>
+<tr class="bg-slate-50">
+<td class="py-2 px-2 font-bold italic">Total Proposed Budget</td>
+<td class="py-2 text-right px-2 font-bold font-mono">$45,000.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Signature -->
+<div class="mt-auto pt-12 flex justify-between items-end">
+<div>
+<div class="w-32 h-12 border-b border-slate-300 mb-2 flex items-center">
+<span class="text-slate-200 text-xs italic">Awaiting Signature...</span>
+</div>
+<p class="text-[10px] font-bold uppercase">Authorized Officer</p>
+<p class="text-[9px] text-slate-500">Acme Corporation Legal Dept.</p>
+</div>
+<div class="bg-slate-50 border border-slate-100 p-2 rounded text-[8px] text-slate-400">
+<p>DOC_ID: 992-QX-2023</p>
+<p>Fingerprint: a92b...f810</p>
+</div>
+</div>
+<!-- Watermark Overlay (Hidden mostly) -->
+<div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none rotate-45 select-none">
+<span class="text-9xl font-black">DRAFT</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Status Bar -->
+<footer class="h-10 bg-slate-900 border-t border-slate-800 flex items-center justify-between px-6">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-primary">check_circle</span>
+<span class="text-[10px] text-slate-400 uppercase tracking-widest">A4 Layout Valid</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-primary">data_object</span>
+<span class="text-[10px] text-slate-400 uppercase tracking-widest">7 Variables Active</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] text-slate-500">Character count: 1,420</span>
+<div class="flex items-center gap-1 text-[10px] text-slate-400">
+<span>Zoom:</span>
+<select class="bg-transparent border-none text-[10px] p-0 focus:ring-0">
+<option>100%</option>
+<option>75%</option>
+<option>150%</option>
+</select>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
