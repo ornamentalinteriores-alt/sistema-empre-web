@@ -4,19 +4,26 @@ import path from 'path';
 // Configuración de la autenticación
 const SCOPES = ['https://www.googleapis.com/auth/drive.readonly'];
 
-// Inicializa el cliente de autenticación
-// En Vercel usamos la variable de entorno, en local el archivo
-const auth = new google.auth.GoogleAuth({
-    credentials: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON) : undefined,
-    keyFile: !process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? path.join(process.cwd(), 'credentials.json') : undefined,
-    scopes: SCOPES,
-});
+// Inicialización Lazy (Perezosa)
+// Solo autenticamos cuando realmente se necesita, evitando errores en build time
+let driveClient: any = null;
 
-const drive = google.drive({ version: 'v3', auth });
+function getDriveClient() {
+    if (driveClient) return driveClient;
+
+    const auth = new google.auth.GoogleAuth({
+        credentials: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON) : undefined,
+        keyFile: !process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? path.join(process.cwd(), 'credentials.json') : undefined,
+        scopes: SCOPES,
+    });
+
+    driveClient = google.drive({ version: 'v3', auth });
+    return driveClient;
+}
 
 export async function listFiles(folderId: string) {
     try {
-        const res = await drive.files.list({
+        const res = await getDriveClient().files.list({
             pageSize: 20,
             fields: 'nextPageToken, files(id, name, mimeType, webViewLink, thumbnailLink)',
             q: `'${folderId}' in parents and trashed = false`,
@@ -31,7 +38,7 @@ export async function listFiles(folderId: string) {
 
 export async function searchFiles(query: string) {
     try {
-        const res = await drive.files.list({
+        const res = await getDriveClient().files.list({
             pageSize: 20,
             fields: 'nextPageToken, files(id, name, mimeType, webViewLink)',
             q: `name contains '${query}' and trashed = false`,
@@ -45,7 +52,7 @@ export async function searchFiles(query: string) {
 
 export async function getFolderIdByName(folderName: string) {
     try {
-        const res = await drive.files.list({
+        const res = await getDriveClient().files.list({
             q: `mimeType = 'application/vnd.google-apps.folder' and name = '${folderName}' and trashed = false`,
             fields: 'files(id, name)',
             pageSize: 1,
