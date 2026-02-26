@@ -11,9 +11,20 @@ let driveClient: any = null;
 function getDriveClient() {
     if (driveClient) return driveClient;
 
+    let credentials = undefined;
+    if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+        try {
+            // Manejar saltos de línea y formateo extra que Vercel pueda añadir a la variable de entorno
+            const cleanJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON.replace(/\\n/g, '\n');
+            credentials = JSON.parse(cleanJson);
+        } catch (e) {
+            console.error("Error parsing GOOGLE_SERVICE_ACCOUNT_JSON", e);
+        }
+    }
+
     const auth = new google.auth.GoogleAuth({
-        credentials: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON) : undefined,
-        keyFile: !process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? path.join(process.cwd(), 'credentials.json') : undefined,
+        credentials,
+        keyFile: !credentials ? path.join(process.cwd(), 'credentials.json') : undefined,
         scopes: SCOPES,
     });
 
